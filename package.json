@@ -4,7 +4,14 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Advanced Data Science & AI Education Platform - My_Tutor",
-  "keywords": ["education", "data-science", "ai", "react", "typescript", "vite"],
+  "keywords": [
+    "education",
+    "data-science",
+    "ai",
+    "react",
+    "typescript",
+    "vite"
+  ],
   "author": "My_Tutor Team",
   "homepage": "https://my-tutor-edtech.vercel.app",
   "scripts": {
@@ -15,7 +22,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext ts,tsx --fix",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf dist",
+    "clean": "rimraf dist",
     "prebuild": "npm run clean"
   },
   "dependencies": {
@@ -24,17 +31,20 @@
     "react-router-dom": "^7.9.3"
   },
   "devDependencies": {
+    "@types/node": "^20.19.23",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@types/react-router-dom": "^5.3.3",
-    "@vitejs/plugin-react": "^4.3.3",
-    "typescript": "~5.9.3",
-    "vite": "^7.1.7",
-    "eslint": "^8.57.0",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
+    "@vitejs/plugin-react": "^4.3.3",
+    "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "rimraf": "^5.0.10",
+    "terser": "^5.44.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7"
   },
   "engines": {
     "node": ">=18.0.0",

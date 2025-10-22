@@ -63,7 +63,7 @@ const Footer: React.FC<FooterProps> = memo(({ className = '' }) => {
     { href: '/refund-policy', label: 'Refund Policy' }
   ]
 
-  const handleSocialClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleSocialClick = (_e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     // Analytics tracking could be added here
     console.log('Social link clicked:', href)
   }

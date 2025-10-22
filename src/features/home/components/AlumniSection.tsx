@@ -28,13 +28,6 @@ const AlumniSection: React.FC = () => {
     }
   ]
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % alumni.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + alumni.length) % alumni.length)
-  }
 
   return (
     <section id="alumni" className="alumni">
