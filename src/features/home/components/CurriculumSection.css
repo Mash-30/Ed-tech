@@ -1,0 +1,276 @@
+.curriculum {
+  background: rgba(248, 250, 252, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 80px 0;
+}
+
+.curriculum-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.curriculum-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.curriculum-left {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+  margin-bottom: 32px;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.course-description {
+  margin-bottom: 32px;
+}
+
+.course-description h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.course-description p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.units-list {
+  margin-bottom: 32px;
+}
+
+.unit-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.unit-header {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 16px 20px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.unit-header:hover {
+  background: #f9fafb;
+}
+
+.unit-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.unit-arrow {
+  font-size: 12px;
+  color: #6b7280;
+  transition: transform 0.2s;
+}
+
+.unit-arrow.expanded {
+  transform: rotate(180deg);
+}
+
+.unit-content {
+  padding: 20px;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.download-brochure-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.download-brochure-btn:hover {
+  background: #2563eb;
+}
+
+.curriculum-right {
+  position: sticky;
+  top: 100px;
+}
+
+.counseling-form {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-image {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.form-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.counseling-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.counseling-form input,
+.counseling-form select {
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+.counseling-form input:focus,
+.counseling-form select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-container label {
+  font-size: 14px;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.form-submit-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-submit-btn:hover {
+  background: #2563eb;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .curriculum {
+    padding: 60px 0;
+  }
+  
+  .curriculum-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .curriculum-left {
+    padding: 24px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .curriculum-right {
+    position: static;
+  }
+  
+  .counseling-form {
+    padding: 24px;
+  }
+  
+  .form-image {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .curriculum {
+    padding: 40px 0;
+  }
+  
+  .curriculum-container {
+    padding: 0 20px;
+  }
+  
+  .curriculum-left {
+    padding: 20px;
+  }
+  
+  .section-title {
+    font-size: 20px;
+  }
+  
+  .unit-header {
+    padding: 12px 16px;
+  }
+  
+  .unit-title {
+    font-size: 14px;
+  }
+  
+  .counseling-form {
+    padding: 20px;
+  }
+}

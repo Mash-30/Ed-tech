@@ -1,0 +1,208 @@
+.course-fees {
+  background: rgba(248, 250, 252, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 80px 0;
+}
+
+.course-fees-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.course-fees-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.fees-left,
+.fees-center,
+.fees-right {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.fees-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 24px;
+}
+
+.highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #374151;
+}
+
+.check-icon {
+  color: #10b981;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.fees-description {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.price-info {
+  margin-bottom: 24px;
+}
+
+.main-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 8px;
+}
+
+.emi-info {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.apply-now-btn,
+.join-now-btn {
+  width: 100%;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 24px;
+}
+
+.apply-now-btn:hover,
+.join-now-btn:hover {
+  background: #2563eb;
+}
+
+.cohort-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.calendar-icon {
+  font-size: 20px;
+}
+
+.date-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.batch-type {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.batch-details {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 20px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.detail-label {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.detail-value {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.detail-value.available {
+  color: #10b981;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .course-fees {
+    padding: 60px 0;
+  }
+  
+  .course-fees-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .fees-left,
+  .fees-center,
+  .fees-right {
+    padding: 24px;
+  }
+  
+  .fees-title {
+    font-size: 20px;
+  }
+  
+  .main-price {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-fees {
+    padding: 40px 0;
+  }
+  
+  .course-fees-container {
+    padding: 0 20px;
+  }
+  
+  .fees-left,
+  .fees-center,
+  .fees-right {
+    padding: 20px;
+  }
+  
+  .fees-title {
+    font-size: 18px;
+  }
+  
+  .highlight-item {
+    font-size: 14px;
+  }
+  
+  .main-price {
+    font-size: 20px;
+  }
+  
+  .emi-info {
+    font-size: 14px;
+  }
+  
+  .detail-row {
+    font-size: 13px;
+  }
+}
