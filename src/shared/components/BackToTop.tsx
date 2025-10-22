@@ -1,39 +1,74 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback, memo } from 'react'
 import './BackToTop.css'
 
-const BackToTop: React.FC = () => {
+interface BackToTopProps {
+  threshold?: number
+  className?: string
+}
+
+const BackToTop: React.FC<BackToTopProps> = memo(({ 
+  threshold = 300, 
+  className = '' 
+}) => {
   const [isVisible, setIsVisible] = useState(false)
 
+  const toggleVisibility = useCallback(() => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    setIsVisible(scrollTop > threshold)
+  }, [threshold])
+
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
+    // Use passive listener for better performance
+    window.addEventListener('scroll', toggleVisibility, { passive: true })
+    
+    // Check initial state
+    toggleVisibility()
+    
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility)
+    }
+  }, [toggleVisibility])
+
+  const scrollToTop = useCallback(() => {
+    // Use requestAnimationFrame for smoother animation
+    const scrollToTopAnimation = () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop
+      
+      if (currentScroll > 0) {
+        window.requestAnimationFrame(scrollToTopAnimation)
+        window.scrollTo(0, currentScroll - (currentScroll / 8))
       }
     }
-
-    window.addEventListener('scroll', toggleVisibility)
-    return () => window.removeEventListener('scroll', toggleVisibility)
+    
+    scrollToTopAnimation()
   }, [])
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      scrollToTop()
+    }
+  }, [scrollToTop])
+
+  if (!isVisible) {
+    return null
   }
 
   return (
-    <>
-      {isVisible && (
-        <button className="back-to-top" onClick={scrollToTop}>
-          <span className="arrow-up">↑</span>
-          <span className="back-to-top-text">Back to Top</span>
-        </button>
-      )}
-    </>
+    <button 
+      className={`back-to-top ${className}`}
+      onClick={scrollToTop}
+      onKeyDown={handleKeyDown}
+      aria-label="Scroll to top of page"
+      title="Back to top"
+      type="button"
+    >
+      <span className="arrow-up" aria-hidden="true">↑</span>
+      <span className="back-to-top-text">Back to Top</span>
+    </button>
   )
-}
+})
+
+BackToTop.displayName = 'BackToTop'
 
 export default BackToTop

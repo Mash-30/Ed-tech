@@ -4,7 +4,12 @@ import { resolve } from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react({
+      jsxRuntime: 'automatic',
+      jsxImportSource: 'react'
+    })
+  ],
   server: {
     port: 3000,
     open: true,
@@ -36,5 +41,8 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom']
+  },
+  esbuild: {
+    jsx: 'automatic'
   }
 })
